@@ -26,16 +26,29 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon" className="border-r border-border/50">
       <SidebarContent className="pt-4">
-        {/* Logo */}
-        <div className={`px-4 mb-6 ${collapsed ? "text-center" : ""}`}>
-          <h1 className="font-heading font-bold text-primary text-xl tracking-wider">
-            {collapsed ? "M" : "MAJE"}
-          </h1>
-          {!collapsed && (
-            <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Hub
-            </span>
-          )}
+        <div className={`px-3 mb-6 ${collapsed ? "flex justify-center" : ""}`}>
+          <div className={`flex items-center gap-3 ${collapsed ? "" : "px-1"}`}>
+            <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-primary/25 bg-gradient-to-br from-primary/20 via-background to-primary/10 shadow-[0_10px_30px_-18px_hsl(var(--primary))]">
+              <span className="absolute left-[9px] top-[4px] text-[1.45rem] font-black italic leading-none tracking-[-0.12em] text-primary">
+                M
+              </span>
+              <span className="absolute left-[20px] top-[13px] text-[1.5rem] font-black leading-none tracking-[-0.08em] text-foreground">
+                J
+              </span>
+              <span className="absolute inset-x-2 bottom-2 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+            </div>
+
+            {!collapsed && (
+              <div className="min-w-0">
+                <h1 className="font-heading text-sm font-semibold uppercase tracking-[0.28em] text-foreground">
+                  MAJE
+                </h1>
+                <span className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
+                  Administração
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
         <SidebarGroup>
